@@ -11,19 +11,19 @@ const Body = styled.div`
 
   /* box-shadow: 0px 15px 15px white; */
 `
- const StyledInput = styled.input `
-width: 100%;
-border: none;
-background-color: white;
-padding: 15px;
-border-radius: 20px;
-outline: none;
-margin-bottom: 10px;
+const StyledInput = styled.input`
+  width: 100%;
+  border: none;
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  outline: none;
+  margin-bottom: 10px;
 `
 
- const StyledLabel = styled.h1`
+const StyledLabel = styled.h1`
   color: white;
-  font-size:25;
+  font-size: 25;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,7 +31,7 @@ margin-bottom: 10px;
   text-align: center;
   margin-bottom: 20px;
 `
- const StyledButton = styled.button`
+const StyledButton = styled.button`
   border-radius: 20px;
   padding: 15px;
   background-color: #fff;
@@ -39,10 +39,12 @@ margin-bottom: 10px;
   margin: 0auto;
   cursor: pointer;
   width: 100%;
-  &:hover{
+  &:hover {
     background-color: #abbac3;
   }
-
+`
+const StyledBold = styled.p`
+  font-size: 16px;
 `
 export const Auth = () => {
   const [inputValue, setInputValue] = useState('')
@@ -70,7 +72,7 @@ export const Auth = () => {
         value={inputValue}
         onChange={onChange}
       />
-      <b style={{color:'red', marginBottom:'10px'}}>{setError ? 'Не верный пароль' : 'wern'}</b>
+      <StyledBold>{setError ? 'Не верный пароль' : 'wern'}</StyledBold>
       <StyledButton onClick={buttonHandler}>Enter</StyledButton>
     </Body>
   )
