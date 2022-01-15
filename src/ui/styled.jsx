@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const StyledButton = styled.button`
   border-radius: 20px;
@@ -36,4 +36,19 @@ export const StyledLabel = styled.h1`
 export const StyledBold = styled.p`
   font-size: 16px;
   color: red;
+`
+export const Main = styled.main`
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 10px;
+  min-width: 320px;
+  max-width: 1220px;
+  background-image: linear-gradient(145deg, var(--shade3), var(--shade2));
 `

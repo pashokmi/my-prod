@@ -7,6 +7,7 @@ import {
   StyledBold,
   StyledLabel
 } from '../ui/styled'
+import { Loader } from './Loader'
 
 const Body = styled.div`
   background-color: transparent;
@@ -39,8 +40,8 @@ export const Auth = () => {
         <NavBar />
       ) : (
         <Body>
+          <Loader/>
           <StyledLabel> Hello, enter authorization code ! </StyledLabel>
-
           <StyledInput
             placeholder="Enter code"
             type={'password'}
