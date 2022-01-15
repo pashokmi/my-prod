@@ -49,11 +49,11 @@ export const Auth = () => {
   const [error, setError] = useState(false)
   const router = useRouter()
 
-  const buttonHandler = () => {
-    if (inputValue===1111) {
+  const buttonHandler = (e) => {
+    if (inputValue) {
       router.push('/nav-bar')
     } else {
-      setError
+      setError(!error)
     }
   }
   const onChange = (e) => {
