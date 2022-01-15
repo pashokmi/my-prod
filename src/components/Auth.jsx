@@ -1,6 +1,12 @@
-import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { NavBar } from './NavBar'
+import {
+  StyledButton,
+  StyledInput,
+  StyledBold,
+  StyledLabel
+} from '../ui/styled'
 
 const Body = styled.div`
   background-color: transparent;
@@ -11,69 +17,40 @@ const Body = styled.div`
 
   /* box-shadow: 0px 15px 15px white; */
 `
-const StyledInput = styled.input`
-  width: 100%;
-  border: none;
-  background-color: white;
-  padding: 15px;
-  border-radius: 20px;
-  outline: none;
-  margin-bottom: 10px;
-`
 
-const StyledLabel = styled.h1`
-  color: white;
-  font-size: 25;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-`
-const StyledButton = styled.button`
-  border-radius: 20px;
-  padding: 15px;
-  background-color: #fff;
-  color: #000;
-  margin: 0auto;
-  cursor: pointer;
-  width: 100%;
-  &:hover {
-    background-color: #abbac3;
-  }
-`
-const StyledBold = styled.p`
-  font-size: 16px;
-`
 export const Auth = () => {
   const [inputValue, setInputValue] = useState('')
-  const [error, setError] = useState(false)
-  const router = useRouter()
+  const [confirm, setConfirm] = useState(false)
+  const [error, setError] = useState('')
 
   const buttonHandler = (e) => {
-    if (inputValue) {
-      router.push('/nav-bar')
+    if (inputValue === 'qwerty') {
+      setConfirm(!confirm)
     } else {
-      setError(!error)
+      setError('Пароль не верный!')
     }
   }
   const onChange = (e) => {
     setInputValue(e.target.value)
   }
-  console.log(inputValue)
   return (
-    <Body>
-      <StyledLabel> Hello, enter authorization code ! </StyledLabel>
+    <>
+      {confirm ? (
+        <NavBar />
+      ) : (
+        <Body>
+          <StyledLabel> Hello, enter authorization code ! </StyledLabel>
 
-      <StyledInput
-        placeholder="Enter code"
-        type={'password'}
-        value={inputValue}
-        onChange={onChange}
-      />
-      <StyledBold>{setError ? 'Не верный пароль' : 'wern'}</StyledBold>
-      <StyledButton onClick={buttonHandler}>Enter</StyledButton>
-    </Body>
+          <StyledInput
+            placeholder="Enter code"
+            type={'password'}
+            value={inputValue}
+            onChange={onChange}
+          />
+          <StyledBold>{error}</StyledBold>
+          <StyledButton onClick={buttonHandler}>Enter</StyledButton>
+        </Body>
+      )}
+    </>
   )
 }

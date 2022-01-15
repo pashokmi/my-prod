@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { Auth } from '../src/components/Auth'
+import { NavBar } from '../src/components/NavBar'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,10 +14,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Auth/>
+        <Auth />
       </main>
-
-      
     </div>
   )
 }
