@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Auth } from '../src/components/Auth'
 import styles from '../styles/Home.module.css'
 
