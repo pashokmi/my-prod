@@ -28,7 +28,10 @@ const Todos = () => {
   }
 
   const removePost =(post) => {
-    setPosts(posts.filter(p => p.id !== post.id))
+    if(confirm('Вы хотите удалить задачу?')){
+      setPosts(posts.filter(p => p.id !== post.id))
+    }
+    
   }
   return (
     <Container>

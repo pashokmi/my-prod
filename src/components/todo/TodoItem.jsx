@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react/cjs/react.development'
 import styled from 'styled-components'
 
 const ItemLi = styled.li`
@@ -42,12 +43,21 @@ const ItemDivs = styled.div`
   align-items: center;
 `
 const TodoItem = ({ post, number, remove }) => {
+  const [editMode, setEditMode] = useState(false)
+  const removeMode = () => {
+    setEditMode(!editMode)
+  }
+
   return (
     <ItemLi>
       <ItemDiv>
         <ItemDivs>
           <ItemNum>{number}.</ItemNum>
-          <ItemP>{post.value}</ItemP>
+          {editMode ? (
+            <input  autoFocus value={post.value} onBlur={removeMode}/>
+          ) : (
+            <ItemP onDoubleClick={removeMode}>{post.value}</ItemP>
+          )}
         </ItemDivs>
         <ItemBtn onClick={() => remove(post)}>Delete</ItemBtn>
       </ItemDiv>
