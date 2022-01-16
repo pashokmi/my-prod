@@ -15,8 +15,6 @@ const Body = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
-  /* box-shadow: 0px 15px 15px white; */
 `
 
 export const Auth = () => {
