@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 const NavBody = styled.div`
   display: flex;
@@ -26,9 +27,11 @@ const Card = styled.div`
 `
 
 export const NavBar = () => {
+  const router = useRouter()
+
   return (
     <NavBody>
-      <Card onClick={() => router.push('/')}>Todo list</Card>
+      <Card onClick={() => router.push('/todo')}>Todo list</Card>
       <Card onClick={() => router.push('/')}>Home</Card>
       <Card onClick={() => router.push('/')}>Elements list</Card>
     </NavBody>
