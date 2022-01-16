@@ -19,18 +19,17 @@ export const StyledInput = styled.input`
   width: 100%;
   border: none;
   background-color: white;
-  padding: 15px;
+  padding: 15px 20px;
   border-radius: 20px;
   outline: none;
   margin-bottom: 10px;
-  text-align: center;
   font-size: 16px;
   color: teal;
   &::placeholder {
     font-size: 16px;
-    text-align: center;
     color: teal;
   }
+  
 `
 
 export const StyledLabel = styled.h1`

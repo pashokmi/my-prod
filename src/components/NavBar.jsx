@@ -19,7 +19,7 @@ const Card = styled.div`
   border: 1px solid teal;
   background-color: #f5f5f5;
   transition: all 0.5s ease-out;
-
+  
   :hover {
     background-color: #727272;
     color: white;
