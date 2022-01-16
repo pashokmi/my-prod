@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Container,
   StyledButton,
@@ -26,12 +26,18 @@ const Todos = () => {
     setPosts([...posts, newTask])
     setValue('')
   }
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem('posts') || '[]')
+    setPosts(saved)
+  }, [])
 
-  const removePost =(post) => {
-    if(confirm('Вы хотите удалить задачу?')){
-      setPosts(posts.filter(p => p.id !== post.id))
+  useEffect(() => {
+    localStorage.setItem('posts', JSON.stringify(posts))
+  }, [posts])
+  const removePost = (post) => {
+    if (confirm('Вы хотите удалить задачу?')) {
+      setPosts(posts.filter((p) => p.id !== post.id))
     }
-    
   }
   return (
     <Container>
