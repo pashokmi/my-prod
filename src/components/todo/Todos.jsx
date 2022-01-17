@@ -13,12 +13,9 @@ const TodoLabel = styled.label`
   color: teal;
 `
 const Todos = () => {
-  const [posts, setPosts] = useState([
-    { id: 1642419005297, value: 'Вы можете редактировать сообщение' }
-  ])
+  const [posts, setPosts] = useState([])
   const [value, setValue] = useState('')
 
-  console.log(value)
   const addNewTask = (e) => {
     e.preventDefault()
     const newTask = {
@@ -42,6 +39,7 @@ const Todos = () => {
       setPosts(posts.filter((p) => p.id !== post.id))
     }
   }
+  
   return (
     <Container>
       <StyledLabel> Todo List</StyledLabel>
