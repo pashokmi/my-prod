@@ -13,7 +13,9 @@ const TodoLabel = styled.label`
   color: teal;
 `
 const Todos = () => {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([
+    { id: 1642419005297, value: 'Вы можете редактировать сообщение' }
+  ])
   const [value, setValue] = useState('')
 
   console.log(value)
@@ -34,7 +36,6 @@ const Todos = () => {
   // useEffect(() => {
   //   window.localStorage.setItem('posts', JSON.stringify(posts))
   // }, [posts])
-
 
   const removePost = (post) => {
     if (confirm('Вы хотите удалить задачу?')) {
@@ -61,7 +62,12 @@ const Todos = () => {
           Add Task
         </StyledButton>
       </form>
-      <TodoList remove={removePost} setValue={setValue} posts={posts} title="Todo List" />
+      <TodoList
+        remove={removePost}
+        setValue={setValue}
+        posts={posts}
+        title="Todo List"
+      />
     </Container>
   )
 }
