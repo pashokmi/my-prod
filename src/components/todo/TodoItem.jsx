@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react/cjs/react.development'
 import styled from 'styled-components'
+import { StyledInput } from '../../ui/styled'
 
 const ItemLi = styled.li`
   display: flex;
@@ -54,7 +55,12 @@ const TodoItem = ({ post, number, remove }) => {
         <ItemDivs>
           <ItemNum>{number}.</ItemNum>
           {editMode ? (
-            <input  autoFocus value={post.value} onBlur={removeMode}/>
+            <StyledInput
+              type={'text'}
+              autoFocus
+              value={post.value}
+              onBlur={removeMode}
+            />
           ) : (
             <ItemP onDoubleClick={removeMode}>{post.value}</ItemP>
           )}

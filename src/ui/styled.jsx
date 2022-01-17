@@ -17,6 +17,8 @@ export const StyledButton = styled.button`
 `
 export const StyledInput = styled.input`
   width: 100%;
+  max-width: 100%;
+  min-width: 300px;
   border: none;
   background-color: white;
   padding: 15px 20px;

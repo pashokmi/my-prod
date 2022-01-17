@@ -27,12 +27,12 @@ const Todos = () => {
     setValue('')
   }
   useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem('posts') || '[]')
+    const saved = JSON.parse(window.localStorage.getItem('posts') || '[]')
     setPosts(saved)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('posts', JSON.stringify(posts))
+    window.localStorage.setItem('posts', JSON.stringify(posts))
   }, [posts])
   const removePost = (post) => {
     if (confirm('Вы хотите удалить задачу?')) {
@@ -59,7 +59,7 @@ const Todos = () => {
           Add Task
         </StyledButton>
       </form>
-      <TodoList remove={removePost} posts={posts} title="Todo List" />
+      <TodoList remove={removePost} setValue={setValue} posts={posts} title="Todo List" />
     </Container>
   )
 }
