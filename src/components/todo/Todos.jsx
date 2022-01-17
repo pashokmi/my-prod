@@ -26,14 +26,16 @@ const Todos = () => {
     setPosts([...posts, newTask])
     setValue('')
   }
-  useEffect(() => {
-    const saved = JSON.parse(window.localStorage.getItem('posts') || '[]')
-    setPosts(saved)
-  }, [])
+  // useEffect(() => {
+  //   const saved = JSON.parse(window.localStorage.getItem('posts') || '[]')
+  //   setPosts(saved)
+  // }, [])
 
-  useEffect(() => {
-    window.localStorage.setItem('posts', JSON.stringify(posts))
-  }, [posts])
+  // useEffect(() => {
+  //   window.localStorage.setItem('posts', JSON.stringify(posts))
+  // }, [posts])
+
+
   const removePost = (post) => {
     if (confirm('Вы хотите удалить задачу?')) {
       setPosts(posts.filter((p) => p.id !== post.id))
