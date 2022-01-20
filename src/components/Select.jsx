@@ -17,9 +17,9 @@ const Select = () => {
     { name: 'Product', value: 'product' },
     { name: 'Flyer', value: 'flyer' }
   ]
-  const [inputValue, setInputValue] = useState(null)
-  const [typeValue, setTypeValue] = useState(null)
-  const [formatValue, setFormatValue] = useState(null)
+  const [inputValue, setInputValue] = useState(null || '')
+  const [typeValue, setTypeValue] = useState(null || '')
+  const [formatValue, setFormatValue] = useState(null || '')
   const addNewTask = (e) => {
     e.preventDefault()
     console.log(
