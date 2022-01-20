@@ -7,6 +7,7 @@ import {
 } from '../../ui/styled'
 import styled from 'styled-components'
 import TodoList from './TodoList'
+import Select from '../Select'
 
 const TodoLabel = styled.label`
   padding-left: 20px;
@@ -25,21 +26,21 @@ const Todos = () => {
     setPosts([...posts, newTask])
     setValue('')
   }
-  // useEffect(() => {
-  //   const saved = JSON.parse(window.localStorage.getItem('posts') || '[]')
-  //   setPosts(saved)
-  // }, [])
+  useEffect(() => {
+    const saved = JSON.parse(window.localStorage.getItem('posts') || '[]')
+    setPosts(saved)
+  }, [])
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('posts', JSON.stringify(posts))
-  // }, [posts])
+  useEffect(() => {
+    window.localStorage.setItem('posts', JSON.stringify(posts))
+  }, [posts])
 
   const removePost = (post) => {
     if (confirm('Вы хотите удалить задачу?')) {
       setPosts(posts.filter((p) => p.id !== post.id))
     }
   }
-  
+
   return (
     <Container>
       <StyledLabel> Todo List</StyledLabel>
@@ -66,6 +67,9 @@ const Todos = () => {
         posts={posts}
         title="Todo List"
       />
+      <Container>
+        <Select/>
+      </Container>
     </Container>
   )
 }

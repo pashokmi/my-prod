@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react/cjs/react.development'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Label = styled.label`
@@ -22,9 +21,7 @@ const Select = () => {
   const [formatValue, setFormatValue] = useState(null || '')
   const addNewTask = (e) => {
     e.preventDefault()
-    console.log(
-      JSON.stringify(`{${formatValue}_${typeValue}}:{${inputValue}}`)
-    )
+    console.log(JSON.stringify(`{${formatValue}_${typeValue}}:{${inputValue}}`))
   }
 
   return (
