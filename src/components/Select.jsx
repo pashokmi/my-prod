@@ -16,9 +16,9 @@ const Select = () => {
     { name: 'Product', value: 'product' },
     { name: 'Flyer', value: 'flyer' }
   ]
-  const [inputValue, setInputValue] = useState(null || '')
-  const [typeValue, setTypeValue] = useState(null || '')
-  const [formatValue, setFormatValue] = useState(null || '')
+  const [inputValue, setInputValue] = useState('')
+  const [typeValue, setTypeValue] = useState('product')
+  const [formatValue, setFormatValue] = useState('bigbox')
   const addNewTask = (e) => {
     e.preventDefault()
     console.log(JSON.stringify(`{${formatValue}_${typeValue}}:{${inputValue}}`))
