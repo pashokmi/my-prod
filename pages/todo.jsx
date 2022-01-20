@@ -2,7 +2,11 @@ import React from 'react'
 import Todos from '../src/components/todo/Todos'
 
 const Todo = () => {
-  return <Todos />
+  return (
+    <>
+      <Todos />
+    </>
+  )
 }
 
 export default Todo

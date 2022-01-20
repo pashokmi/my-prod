@@ -3,7 +3,6 @@ import { Auth } from '../src/components/Auth'
 import { Container, Main } from '../src/ui/styled'
 
 export default function Home() {
-
   return (
     <Container>
       <Head>
