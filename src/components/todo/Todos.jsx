@@ -68,7 +68,7 @@ const Todos = () => {
         title="Todo List"
       />
       <Container>
-        <Select/>
+        <Select />
       </Container>
     </Container>
   )
