@@ -6,6 +6,10 @@ import { StyledInput } from '../../ui/styled'
 const ItemLi = styled.li`
   display: flex;
   border-bottom: 1px solid #000;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 5px;
+ 
 `
 const ItemDiv = styled.div`
   display: flex;
@@ -18,7 +22,6 @@ const ItemDiv = styled.div`
 const ItemBtn = styled.button`
   border: none;
   cursor: pointer;
-  /* border-radius: 20px; */
   background-color: transparent;
   padding: 10px;
   position: relative;
@@ -32,6 +35,9 @@ const ItemP = styled.p`
   margin: 0;
   font-style: italic;
   padding: 0 5px;
+  ::first-letter {
+    text-transform: uppercase;
+  }
 `
 const ItemNum = styled.span`
   margin-right: 5px;

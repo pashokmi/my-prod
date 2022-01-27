@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Container,
-  StyledButton,
-  StyledInput,
-  StyledLabel
-} from '../../ui/styled'
+import { StyledButton, StyledInput, StyledLabel } from '../../ui/styled'
 import styled from 'styled-components'
 import TodoList from './TodoList'
-import Select from '../Select'
+import { Container, Bg } from '../../ui/styled'
+
 
 const TodoLabel = styled.label`
   padding-left: 20px;
@@ -42,35 +38,34 @@ const Todos = () => {
   }
 
   return (
-    <Container>
-      <StyledLabel> Todo List</StyledLabel>
-      <form>
-        <TodoLabel>
-          Enter the name of the task!
-          <StyledInput
-            type={'text'}
-            placeholder="Enter the name of the task!"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </TodoLabel>
-        <StyledButton
-          onClick={addNewTask}
-          disabled={value.length < 1 ? true : false}
-        >
-          Add Task
-        </StyledButton>
-      </form>
-      <TodoList
-        remove={removePost}
-        setValue={setValue}
-        posts={posts}
-        title="Todo List"
-      />
+    <Bg>
       <Container>
-        <Select />
+        <StyledLabel>Todo List</StyledLabel>
+        <form>
+          <TodoLabel>
+            Your tasks ...
+            <StyledInput
+              type={'text'}
+              placeholder="Enter the name of the task!"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </TodoLabel>
+          <StyledButton
+            onClick={addNewTask}
+            disabled={value.length < 1 ? true : false}
+          >
+            Add Task
+          </StyledButton>
+        </form>
+        <TodoList
+          remove={removePost}
+          setValue={setValue}
+          posts={posts}
+          title="Your Tasks ..."
+        />
       </Container>
-    </Container>
+    </Bg>
   )
 }
 export default Todos

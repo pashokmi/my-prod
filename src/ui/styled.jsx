@@ -49,6 +49,14 @@ export const StyledBold = styled.p`
   margin: 0;
   color: red;
 `
+export const Bg = styled.div`
+  background: radial-gradient(
+    circle,
+    hsla(199, 47%, 57%, 1) 0%,
+    hsla(214, 24%, 28%, 1) 50%,
+    hsla(0, 0%, 0%, 1) 100%
+  );
+`
 export const Main = styled.main`
   min-height: 100vh;
   flex: 1;
@@ -56,18 +64,11 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1220px;
-  margin: 0 auto;
 `
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 10px;
+  min-height: 100vh;
   min-width: 320px;
-
-  background: radial-gradient(
-    circle,
-    hsla(199, 47%, 57%, 1) 0%,
-    hsla(214, 24%, 28%, 1) 50%,
-    hsla(0, 0%, 0%, 1) 100%
-  );
+  max-width: 1220px;
 `

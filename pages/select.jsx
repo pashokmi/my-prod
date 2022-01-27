@@ -5,7 +5,7 @@ import Todos from '../src/components/todo/Todos'
 const Todo = () => {
   return (
     <>
-      <Todos />
+      <Select />
     </>
   )
 }
