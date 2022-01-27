@@ -14,7 +14,7 @@ const Stars = () => {
           height: '100%',
           zIndex: '1'
         }}
-        numParticles={800}
+        numParticles={400}
         particleSpeed={0}
         dx={0.000000001}
         dy={0.000000001}
