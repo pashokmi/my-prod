@@ -7,7 +7,6 @@ import {
   StyledBold,
   StyledLabel
 } from '../ui/styled'
-import { Loader } from './Loader'
 
 const Body = styled.div`
   background-color: transparent;
@@ -15,6 +14,7 @@ const Body = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 `
 
 export const Auth = () => {
@@ -29,6 +29,11 @@ export const Auth = () => {
       setError('Пароль не верный!')
     }
   }
+  const onPressEnter = (e)=>{
+    if(e.key === 'Enter'){
+      buttonHandler()
+    }
+  }
   const onChange = (e) => {
     setInputValue(e.target.value)
   }
@@ -38,13 +43,13 @@ export const Auth = () => {
         <NavBar />
       ) : (
         <Body>
-          <Loader/>
           <StyledLabel> Hello, enter authorization code ! </StyledLabel>
           <StyledInput
             placeholder="Enter code"
             type={'password'}
             value={inputValue}
             onChange={onChange}
+            onKeyPress={onPressEnter}
           />
           <StyledBold>{error}</StyledBold>
           <StyledButton onClick={buttonHandler}>Enter</StyledButton>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 const NavBody = styled.div`
   display: flex;
   flex-wrap: wrap;
+  z-index: 2;
 `
 const Card = styled.div`
   display: flex;

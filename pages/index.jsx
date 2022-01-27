@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import { Auth } from '../src/components/Auth'
 import { Container, Main } from '../src/ui/styled'
+import dynamic from 'next/dynamic'
+
+const Stars = dynamic(() => import('../src/components/Stars'), {
+  ssr: false
+})
 
 export default function Home() {
   return (
@@ -12,6 +17,7 @@ export default function Home() {
       </Head>
 
       <Main>
+        <Stars />
         <Auth />
       </Main>
     </Container>

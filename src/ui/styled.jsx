@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: #abbac3;
   }
-  &:disabled{
+  &:disabled {
     background-color: #40726b;
   }
 `
@@ -31,7 +31,6 @@ export const StyledInput = styled.input`
     font-size: 16px;
     color: teal;
   }
-  
 `
 
 export const StyledLabel = styled.h1`
@@ -46,7 +45,8 @@ export const StyledLabel = styled.h1`
 `
 
 export const StyledBold = styled.p`
-  font-size: 16px;
+  font-size: 26px;
+  margin: 0;
   color: red;
 `
 export const Main = styled.main`
@@ -56,12 +56,18 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1220px;
+  margin: 0 auto;
 `
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 10px;
-  min-height: 100vh;
   min-width: 320px;
-  max-width: 1220px;
-  background-image: linear-gradient(145deg, var(--shade3), var(--shade2));
+
+  background: radial-gradient(
+    circle,
+    hsla(199, 47%, 57%, 1) 0%,
+    hsla(214, 24%, 28%, 1) 50%,
+    hsla(0, 0%, 0%, 1) 100%
+  );
 `
