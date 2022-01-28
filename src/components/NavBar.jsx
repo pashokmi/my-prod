@@ -34,7 +34,7 @@ export const NavBar = () => {
     <NavBody>
       <Card onClick={() => router.push('/todo')}>Todo list</Card>
       <Card onClick={() => router.push('/select')}>Select</Card>
-      <Card onClick={() => router.push('/')}>Elements list</Card>
+      <Card onClick={() => router.push('/canvas')}>Stars</Card>
     </NavBody>
   )
 }
